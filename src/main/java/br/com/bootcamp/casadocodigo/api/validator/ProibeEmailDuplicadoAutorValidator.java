@@ -4,12 +4,14 @@ import br.com.bootcamp.casadocodigo.api.form.AutorForm;
 import br.com.bootcamp.casadocodigo.domain.model.Autor;
 import br.com.bootcamp.casadocodigo.domain.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import java.util.Optional;
 
+@Component
 public class ProibeEmailDuplicadoAutorValidator implements Validator {
 
     @Autowired

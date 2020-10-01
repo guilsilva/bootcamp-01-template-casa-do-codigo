@@ -26,6 +26,7 @@ public class AutorController {
     @Autowired
     private AutorRepository autorRepository;
 
+    //1
     @Autowired
     ProibeEmailDuplicadoAutorValidator proibeEmailDuplicadoAutorValidator;
 
