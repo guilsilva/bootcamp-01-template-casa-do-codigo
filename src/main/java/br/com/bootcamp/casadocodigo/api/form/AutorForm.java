@@ -1,6 +1,6 @@
-package br.com.bootcamp.casadocodigo.form;
+package br.com.bootcamp.casadocodigo.api.form;
 
-import br.com.bootcamp.casadocodigo.model.Autor;
+import br.com.bootcamp.casadocodigo.domain.model.Autor;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -10,20 +10,22 @@ import java.time.LocalDateTime;
 public class AutorForm {
 
     @Getter
-    @NotNull @Email @NotEmpty
+    @Email(message = "{email.not.valid}")
+    @NotBlank(message = "{not.blank}")
     private String email;
     @Getter
-    @NotNull @NotEmpty
+    @NotBlank(message = "{not.blank}")
     private String nome;
     @Getter
-    @NotNull @Size(max = 400) @NotEmpty
+    @NotBlank(message = "{not.blank}")
+    @Size(max = 400, message = "{descricao.size}")
     private String descricao;
     @Getter
-    @NotNull
     @Builder.Default
     private LocalDateTime dataRegistro = LocalDateTime.now();
 
-    public Autor getAutor(){
+    //1
+    public Autor get(){
         return new Autor(this.nome, this.email, this.descricao, this.dataRegistro);
     }
 }

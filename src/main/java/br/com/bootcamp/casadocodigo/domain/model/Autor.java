@@ -1,11 +1,8 @@
-package br.com.bootcamp.casadocodigo.model;
+package br.com.bootcamp.casadocodigo.domain.model;
 
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,9 +17,14 @@ public class Autor {
     @Getter
     private String email;
     @Getter
+    @Column(length = 400)
     private String descricao;
     @Getter
     private LocalDateTime dataRegistro;
+
+    @Deprecated
+    public Autor(){
+    }
 
     public Autor(String nome, String email, String descricao, LocalDateTime dataRegistro) {
         this.nome = nome;
