@@ -14,9 +14,10 @@ import java.util.Collection;
 import java.util.List;
 
 @RestControllerAdvice
+//2
 public class ApiHandlerAdvice {
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ExceptionHandler({MethodArgumentNotValidException.class, IllegalStateException.class})
     //1
     public ResponseEntity<ErrorMessage> handle(MethodArgumentNotValidException methodArgumentNotValidException){
         Collection<String> mensagens = new ArrayList<>();
@@ -24,6 +25,7 @@ public class ApiHandlerAdvice {
         List<FieldError> fieldErrors = bindingResult.getFieldErrors();
         fieldErrors.forEach(fieldError -> {
             String message = String.format("%s", fieldError.getDefaultMessage());
+            //1
             if (!mensagens.contains(message))
                 mensagens.add(message);
         });

@@ -1,17 +1,19 @@
 package br.com.bootcamp.casadocodigo.api.form;
 
+import br.com.bootcamp.casadocodigo.api.validator.UniqueValue;
 import br.com.bootcamp.casadocodigo.domain.model.Autor;
 import lombok.Builder;
 import lombok.Getter;
 
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
-
+//1
 public class AutorForm {
 
     @Getter
     @Email(message = "{email.not.valid}")
     @NotBlank(message = "{not.blank}")
+    @UniqueValue(domainClass = Autor.class, fieldName = "email")
     private String email;
     @Getter
     @NotBlank(message = "{not.blank}")
