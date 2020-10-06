@@ -3,12 +3,11 @@ package br.com.bootcamp.casadocodigo.api.dto;
 import br.com.bootcamp.casadocodigo.domain.model.Autor;
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 //1
 public class AutorDTO {
 
-    @Getter
-    private Long id;
     @Getter
     private String nome;
     @Getter
@@ -16,7 +15,7 @@ public class AutorDTO {
     @Getter
     private String descricao;
     @Getter
-    private LocalDateTime dataRegistro;
+    private LocalDate dataRegistro;
 
     //1
     public AutorDTO(Autor autor) {
@@ -24,6 +23,5 @@ public class AutorDTO {
         this.email = autor.getEmail();
         this.descricao = autor.getDescricao();
         this.dataRegistro = autor.getDataRegistro();
-        this.id = autor.getId();
     }
 }

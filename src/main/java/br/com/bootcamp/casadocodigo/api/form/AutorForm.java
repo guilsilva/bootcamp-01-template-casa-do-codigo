@@ -22,12 +22,9 @@ public class AutorForm {
     @NotBlank(message = "{not.blank}")
     @Size(max = 400, message = "{descricao.size}")
     private String descricao;
-    @Getter
-    @Builder.Default
-    private LocalDateTime dataRegistro = LocalDateTime.now();
 
     //1
     public Autor get(){
-        return new Autor(this.nome, this.email, this.descricao, this.dataRegistro);
+        return new Autor(this.nome, this.email, this.descricao);
     }
 }

@@ -1,9 +1,8 @@
 package br.com.bootcamp.casadocodigo.api.controller;
 
-import br.com.bootcamp.casadocodigo.api.dto.CategoriaDTO;
-import br.com.bootcamp.casadocodigo.api.form.CategoriaForm;
-import br.com.bootcamp.casadocodigo.domain.model.Categoria;
-import br.com.bootcamp.casadocodigo.domain.repository.CategoriaRepository;
+import br.com.bootcamp.casadocodigo.api.dto.LivroDTO;
+import br.com.bootcamp.casadocodigo.api.form.LivroForm;
+import br.com.bootcamp.casadocodigo.domain.model.Livro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,10 +15,9 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/categoria")
+@RequestMapping("/api/livro")
 //3
-public class CategoriaController {
-
+public class LivroController {
     @Autowired
     EntityManager entityManager;
 
@@ -27,10 +25,10 @@ public class CategoriaController {
     @Transactional
     //1
     //1
-    public ResponseEntity<CategoriaDTO> cadastrarCategoria(@RequestBody @Valid CategoriaForm form){
+    public ResponseEntity<LivroDTO> cadastrarLivro(@RequestBody @Valid LivroForm form){
         //1
-        Categoria categoria = form.get();
-        entityManager.persist(categoria);
-        return ResponseEntity.ok(new CategoriaDTO(categoria));
+        Livro livro = form.get(entityManager);
+        entityManager.persist(livro);
+        return ResponseEntity.ok(new LivroDTO(livro));
     }
 }

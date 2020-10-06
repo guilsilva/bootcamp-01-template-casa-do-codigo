@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/autor")
-//4
+//3
 public class AutorController {
-    //1
     @Autowired
-    private AutorRepository autorRepository;
+    EntityManager entityManager;
 
     @PostMapping
     @Transactional
@@ -29,7 +29,7 @@ public class AutorController {
     public ResponseEntity<AutorDTO> cadastrarAutor(@RequestBody @Valid AutorForm form){
         //1
         Autor autor = form.get();
-        autorRepository.save(autor);
+        entityManager.persist(autor);
         return ResponseEntity.ok(new AutorDTO(autor));
     }
 }

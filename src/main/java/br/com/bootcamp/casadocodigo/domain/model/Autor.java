@@ -3,7 +3,10 @@ package br.com.bootcamp.casadocodigo.domain.model;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Autor {
@@ -20,16 +23,16 @@ public class Autor {
     @Column(length = 400)
     private String descricao;
     @Getter
-    private LocalDateTime dataRegistro;
+    private LocalDate dataRegistro;
 
     @Deprecated
     public Autor(){
     }
 
-    public Autor(String nome, String email, String descricao, LocalDateTime dataRegistro) {
+    public Autor(String nome, String email, String descricao) {
         this.nome = nome;
         this.email = email;
         this.descricao = descricao;
-        this.dataRegistro = dataRegistro;
+        this.dataRegistro = LocalDate.now();
     }
 }
