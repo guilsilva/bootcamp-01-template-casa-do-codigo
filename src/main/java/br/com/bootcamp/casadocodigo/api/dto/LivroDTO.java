@@ -7,6 +7,9 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
+
 //2
 public class LivroDTO {
 
@@ -41,5 +44,9 @@ public class LivroDTO {
         this.dataPublicacao = livro.getDataPublicacao();
         this.autor = new AutorDTO(livro.getAutor());
         this.categoria = new CategoriaDTO(livro.getCategoria());
+    }
+
+    public static List<LivroDTO> converter(List<Livro> livros){
+        return livros.stream().map(LivroDTO::new).collect(Collectors.toList());
     }
 }

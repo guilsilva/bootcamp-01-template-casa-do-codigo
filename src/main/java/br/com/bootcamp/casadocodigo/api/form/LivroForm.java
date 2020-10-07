@@ -55,6 +55,7 @@ public class LivroForm {
     //1
     public Livro get(EntityManager entityManager){
         return new Livro(titulo,resumo,sumario,preco,numeroPaginas,isnb,dataPublicacao,
-                entityManager.find(Autor.class, autor),entityManager.find(Categoria.class, categoria));
+                entityManager.find(Autor.class, autor),
+                entityManager.find(Categoria.class, categoria));
     }
 }
