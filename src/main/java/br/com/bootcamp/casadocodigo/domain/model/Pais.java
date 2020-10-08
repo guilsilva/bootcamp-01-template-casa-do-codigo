@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Categoria {
+public class Pais {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
@@ -17,10 +17,9 @@ public class Categoria {
     private String nome;
 
     @Deprecated
-    public Categoria(){}
+    public Pais(){}
 
-    public Categoria(String nome){
+    public Pais(String nome){
         this.nome = nome;
     }
 }
-

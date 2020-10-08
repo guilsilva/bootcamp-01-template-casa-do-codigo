@@ -1,7 +1,5 @@
 package br.com.bootcamp.casadocodigo.api.dto;
 
-import br.com.bootcamp.casadocodigo.domain.model.Autor;
-import br.com.bootcamp.casadocodigo.domain.model.Categoria;
 import br.com.bootcamp.casadocodigo.domain.model.Livro;
 import lombok.Getter;
 
@@ -13,6 +11,8 @@ import java.util.stream.Collectors;
 //2
 public class LivroDTO {
 
+    @Getter
+    private Long id;
     @Getter
     private String titulo;
     @Getter
@@ -35,6 +35,7 @@ public class LivroDTO {
     private CategoriaDTO categoria;
 
     public LivroDTO(Livro livro) {
+        this.id = livro.getId();
         this.titulo = livro.getTitulo();
         this.resumo = livro.getResumo();
         this.sumario = livro.getSumario();

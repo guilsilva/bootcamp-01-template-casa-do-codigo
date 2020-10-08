@@ -4,7 +4,6 @@ import br.com.bootcamp.casadocodigo.ErrorMessage;
 import br.com.bootcamp.casadocodigo.api.dto.DetalhesLivroDTO;
 import br.com.bootcamp.casadocodigo.api.dto.LivroDTO;
 import br.com.bootcamp.casadocodigo.api.form.LivroForm;
-import br.com.bootcamp.casadocodigo.api.validator.ExistentField;
 import br.com.bootcamp.casadocodigo.domain.model.Livro;
 import br.com.bootcamp.casadocodigo.domain.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,6 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/livro")

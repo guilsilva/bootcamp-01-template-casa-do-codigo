@@ -4,10 +4,11 @@ import br.com.bootcamp.casadocodigo.domain.model.Autor;
 import lombok.Getter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 //1
 public class AutorDTO {
 
+    @Getter
+    private Long id;
     @Getter
     private String nome;
     @Getter
@@ -19,6 +20,7 @@ public class AutorDTO {
 
     //1
     public AutorDTO(Autor autor) {
+        this.id = autor.getId();
         this.nome = autor.getNome();
         this.email = autor.getEmail();
         this.descricao = autor.getDescricao();

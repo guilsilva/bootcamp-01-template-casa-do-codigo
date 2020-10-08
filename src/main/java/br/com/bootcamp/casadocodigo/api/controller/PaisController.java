@@ -1,8 +1,8 @@
 package br.com.bootcamp.casadocodigo.api.controller;
 
-import br.com.bootcamp.casadocodigo.api.dto.CategoriaDTO;
-import br.com.bootcamp.casadocodigo.api.form.CategoriaForm;
-import br.com.bootcamp.casadocodigo.domain.model.Categoria;
+import br.com.bootcamp.casadocodigo.api.dto.PaisDTO;
+import br.com.bootcamp.casadocodigo.api.form.PaisForm;
+import br.com.bootcamp.casadocodigo.domain.model.Pais;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,21 +15,16 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/categoria")
-//3
-public class CategoriaController {
-
+@RequestMapping("/api/pais")
+public class PaisController {
     @Autowired
     EntityManager entityManager;
 
     @PostMapping
     @Transactional
-    //1
-    //1
-    public ResponseEntity<CategoriaDTO> cadastrarCategoria(@RequestBody @Valid CategoriaForm form){
-        //1
-        Categoria categoria = form.get();
-        entityManager.persist(categoria);
-        return ResponseEntity.ok(new CategoriaDTO(categoria));
+    public ResponseEntity<PaisDTO> cadastrarPais(@RequestBody @Valid PaisForm paisForm){
+        Pais pais = paisForm.get();
+        entityManager.persist(pais);
+        return ResponseEntity.ok(new PaisDTO(pais));
     }
 }

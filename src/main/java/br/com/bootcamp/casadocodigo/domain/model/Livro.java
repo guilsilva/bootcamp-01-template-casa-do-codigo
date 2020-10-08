@@ -5,7 +5,6 @@ import lombok.Getter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 //2
 @Entity
 public class Livro {

@@ -3,7 +3,6 @@ package br.com.bootcamp.casadocodigo.api.controller;
 import br.com.bootcamp.casadocodigo.api.dto.AutorDTO;
 import br.com.bootcamp.casadocodigo.api.form.AutorForm;
 import br.com.bootcamp.casadocodigo.domain.model.Autor;
-import br.com.bootcamp.casadocodigo.domain.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

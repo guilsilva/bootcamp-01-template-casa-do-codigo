@@ -2,25 +2,25 @@ package br.com.bootcamp.casadocodigo.domain.model;
 
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Categoria {
+public class Estado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
     private Long id;
     @Getter
     private String nome;
+    @Getter
+    @ManyToOne
+    @JoinColumn
+    private Pais pais;
 
     @Deprecated
-    public Categoria(){}
+    public Estado(){}
 
-    public Categoria(String nome){
+    public Estado(String nome, Pais pais){
         this.nome = nome;
+        this.pais = pais;
     }
 }
-

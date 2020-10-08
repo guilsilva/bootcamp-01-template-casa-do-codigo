@@ -2,11 +2,11 @@ package br.com.bootcamp.casadocodigo.api.form;
 
 import br.com.bootcamp.casadocodigo.api.validator.UniqueValue;
 import br.com.bootcamp.casadocodigo.domain.model.Autor;
-import lombok.Builder;
 import lombok.Getter;
 
-import javax.validation.constraints.*;
-import java.time.LocalDateTime;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 //1
 public class AutorForm {
 
