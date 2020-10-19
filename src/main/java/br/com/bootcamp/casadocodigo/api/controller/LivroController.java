@@ -1,6 +1,6 @@
 package br.com.bootcamp.casadocodigo.api.controller;
 
-import br.com.bootcamp.casadocodigo.ErrorMessage;
+import br.com.bootcamp.casadocodigo.api.handler.ErrorMessage;
 import br.com.bootcamp.casadocodigo.api.dto.DetalhesLivroDTO;
 import br.com.bootcamp.casadocodigo.api.dto.LivroDTO;
 import br.com.bootcamp.casadocodigo.api.form.LivroForm;
@@ -47,6 +47,7 @@ public class LivroController {
     @GetMapping("/{id}")
     public ResponseEntity<?> consultarLivroPorId(@PathVariable("id") Long id){
         Livro livro = entityManager.find(Livro.class, id);
+        //1
         if(livro == null){
             List<String> erro = new ArrayList<>();
             erro.add("Id informado não existe no banco.");
@@ -54,6 +55,7 @@ public class LivroController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(new ErrorMessage(erro));
         }
+        //1
         return ResponseEntity.ok(new DetalhesLivroDTO(livro));
     }
 }

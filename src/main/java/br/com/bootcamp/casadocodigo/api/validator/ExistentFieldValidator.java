@@ -27,7 +27,7 @@ public class ExistentFieldValidator implements ConstraintValidator<ExistentField
         query.setParameter("value", value);
         List<?> list = query.getResultList();
         Assert.state(!list.isEmpty(),
-                "Não foi encontrado nenhum "+klass.getName()+" com o atributo "+domainAttribute+" = "+value);
+                "Não foi encontrado nenhum "+klass.getSimpleName()+" com o atributo "+domainAttribute+" = "+value);
 
         return !list.isEmpty();
     }

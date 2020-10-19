@@ -18,7 +18,7 @@ public class EstadoForm {
     private String nome;
     @Getter
     @NotNull(message = "{not.blank}")
-    @ExistentField(domainClass = Pais.class, fieldName = "id", message = "{not.existent.value.pais}")
+    @ExistentField(domainClass = Pais.class, fieldName = "id")
     private Long pais;
 
     public Estado get(EntityManager entityManager){

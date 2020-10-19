@@ -45,11 +45,11 @@ public class LivroForm {
     private LocalDate dataPublicacao;
     @Getter
     @NotNull(message = "{not.blank}")
-    @ExistentField(domainClass = Autor.class, fieldName = "id", message = "{not.existent.value.autor}")
+    @ExistentField(domainClass = Autor.class, fieldName = "id")
     private Long autor;
     @Getter
     @NotNull(message = "{not.blank}")
-    @ExistentField(domainClass = Categoria.class, fieldName = "id", message = "{not.existent.value.categoria}")
+    @ExistentField(domainClass = Categoria.class, fieldName = "id")
     private Long categoria;
 
     //1

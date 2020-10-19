@@ -1,4 +1,4 @@
-package br.com.bootcamp.casadocodigo;
+package br.com.bootcamp.casadocodigo.api.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ import java.util.List;
 //2
 public class ApiHandlerAdvice {
 
-    @ExceptionHandler({MethodArgumentNotValidException.class, IllegalStateException.class})
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     //1
     public ResponseEntity<ErrorMessage> handle(MethodArgumentNotValidException methodArgumentNotValidException){
         Collection<String> mensagens = new ArrayList<>();
@@ -29,6 +29,14 @@ public class ApiHandlerAdvice {
             if (!mensagens.contains(message))
                 mensagens.add(message);
         });
+
+        ErrorMessage errorMessage = new ErrorMessage(mensagens);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+    }
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<ErrorMessage> handleIllegalStateException(IllegalStateException illegalStateException){
+        Collection<String> mensagens = new ArrayList<>();
+        mensagens.add(illegalStateException.getMessage());
 
         ErrorMessage errorMessage = new ErrorMessage(mensagens);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);

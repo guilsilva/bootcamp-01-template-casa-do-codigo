@@ -8,6 +8,7 @@ import javax.persistence.*;
 public class Estado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
     private Long id;
     @Getter
     private String nome;

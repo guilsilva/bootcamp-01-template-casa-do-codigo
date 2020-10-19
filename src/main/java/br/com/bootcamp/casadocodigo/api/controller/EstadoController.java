@@ -16,13 +16,17 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/estado")
+//3
 public class EstadoController {
     @Autowired
     EntityManager entityManager;
 
     @PostMapping
     @Transactional
+    //1
+    //1
     public ResponseEntity<EstadoDTO> cadastrarEstado(@RequestBody @Valid EstadoForm estadoForm){
+        //1
         Estado estado = estadoForm.get(entityManager);
         entityManager.persist(estado);
         return ResponseEntity.ok(new EstadoDTO(estado));

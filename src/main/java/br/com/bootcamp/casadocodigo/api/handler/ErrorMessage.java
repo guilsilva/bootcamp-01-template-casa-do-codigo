@@ -1,4 +1,4 @@
-package br.com.bootcamp.casadocodigo;
+package br.com.bootcamp.casadocodigo.api.handler;
 
 import lombok.Getter;
 
