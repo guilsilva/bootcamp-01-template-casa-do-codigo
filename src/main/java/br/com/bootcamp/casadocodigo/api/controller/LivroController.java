@@ -19,7 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/livro")
-//3
+//6
 public class LivroController {
     @Autowired
     EntityManager entityManager;
@@ -49,6 +49,7 @@ public class LivroController {
         Livro livro = entityManager.find(Livro.class, id);
         //1
         if(livro == null){
+            //1
             List<String> erro = new ArrayList<>();
             erro.add("Id informado não existe no banco.");
 

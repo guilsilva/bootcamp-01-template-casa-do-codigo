@@ -1,36 +1,38 @@
 package br.com.bootcamp.casadocodigo.api.dto;
 
 import br.com.bootcamp.casadocodigo.domain.model.DadosCompra;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
-
+//4
 public class DadosCompraDTO {
     @Getter
-    private String nome;
+    private final String nome;
     @Getter
-    private String email;
+    private final String email;
     @Getter
-    private String sobrenome;
+    private final String sobrenome;
     @Getter
-    private String documento;
+    private final String documento;
     @Getter
-    private String endereco;
+    private final String endereco;
     @Getter
-    private String complemento;
+    private final String complemento;
     @Getter
-    private String cidade;
+    private final String cidade;
     @Getter
-    private PaisDTO pais;
+    //1
+    private final PaisDTO pais;
     @Getter
-    private EstadoDTO estado;
+    //1
+    private final EstadoDTO estado;
     @Getter
-    private String telefone;
+    private final String telefone;
     @Getter
-    private String cep;
+    private final String cep;
     @Getter
-    private CompraDTO compra;
+    //1
+    private final CompraDTO compra;
 
+    //1
     public DadosCompraDTO(DadosCompra dadosCompra){
         this.cep = dadosCompra.getCep();
         this.cidade = dadosCompra.getCidade();

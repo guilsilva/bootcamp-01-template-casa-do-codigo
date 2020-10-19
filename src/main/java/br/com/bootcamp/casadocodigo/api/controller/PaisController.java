@@ -16,13 +16,17 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/pais")
+//3
 public class PaisController {
     @Autowired
     EntityManager entityManager;
 
     @PostMapping
     @Transactional
+    //1
+    //1
     public ResponseEntity<PaisDTO> cadastrarPais(@RequestBody @Valid PaisForm paisForm){
+        //1
         Pais pais = paisForm.get();
         entityManager.persist(pais);
         return ResponseEntity.ok(new PaisDTO(pais));

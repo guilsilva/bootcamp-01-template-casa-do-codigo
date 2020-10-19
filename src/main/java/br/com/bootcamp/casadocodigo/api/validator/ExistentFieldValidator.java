@@ -29,6 +29,6 @@ public class ExistentFieldValidator implements ConstraintValidator<ExistentField
         Assert.state(!list.isEmpty(),
                 "Não foi encontrado nenhum "+klass.getSimpleName()+" com o atributo "+domainAttribute+" = "+value);
 
-        return !list.isEmpty();
+        return Boolean.TRUE;
     }
 }

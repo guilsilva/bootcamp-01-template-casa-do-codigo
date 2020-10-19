@@ -19,8 +19,10 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/api/pagamento")
+//4
 public class PagamentoController {
 
+    //1
     @Autowired
     CupomRepository cupomRepository;
     @Autowired
@@ -28,8 +30,11 @@ public class PagamentoController {
 
     @PostMapping
     @Transactional
+    //1
+    //1
     public ResponseEntity<DadosCompraDTO> comprar(@RequestBody @Valid DadosCompraForm form,
                                                          UriComponentsBuilder uriComponentsBuilder){
+        //1
         DadosCompra dadosCompra = form.get(entityManager, cupomRepository);
         entityManager.persist(dadosCompra);
         URI uri = uriComponentsBuilder.path("/api/pagamento/{id}").buildAndExpand(dadosCompra.getId()).toUri();

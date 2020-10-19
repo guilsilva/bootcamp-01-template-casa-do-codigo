@@ -6,9 +6,9 @@ import lombok.Getter;
 public class CategoriaDTO {
 
     @Getter
-    private Long id;
+    private final Long id;
     @Getter
-    private String nome;
+    private final String nome;
 
     //1
     public CategoriaDTO(Categoria categoria){

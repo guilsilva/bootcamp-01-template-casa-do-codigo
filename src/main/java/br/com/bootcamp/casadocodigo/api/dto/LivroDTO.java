@@ -8,32 +8,33 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//2
+//3
 public class LivroDTO {
 
     @Getter
-    private Long id;
+    private final Long id;
     @Getter
-    private String titulo;
+    private final String titulo;
     @Getter
-    private String resumo;
+    private final String resumo;
     @Getter
-    private String sumario;
+    private final String sumario;
     @Getter
-    private BigDecimal preco;
+    private final BigDecimal preco;
     @Getter
-    private Integer numeroPaginas;
+    private final Integer numeroPaginas;
     @Getter
-    private Long isnb;
+    private final Long isnb;
     @Getter
-    private LocalDate dataPublicacao;
+    private final LocalDate dataPublicacao;
     //1
     @Getter
-    private AutorDTO autor;
+    private final AutorDTO autor;
     //1
     @Getter
-    private CategoriaDTO categoria;
+    private final CategoriaDTO categoria;
 
+    //1
     public LivroDTO(Livro livro) {
         this.id = livro.getId();
         this.titulo = livro.getTitulo();

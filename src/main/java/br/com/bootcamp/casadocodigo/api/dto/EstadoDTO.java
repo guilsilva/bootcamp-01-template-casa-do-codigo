@@ -1,18 +1,18 @@
 package br.com.bootcamp.casadocodigo.api.dto;
 
 import br.com.bootcamp.casadocodigo.domain.model.Estado;
-import br.com.bootcamp.casadocodigo.domain.model.Pais;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
-
+//2
 public class EstadoDTO {
     @Getter
-    private Long id;
+    private final Long id;
     @Getter
-    private String nome;
+    private final String nome;
     @Getter
-    private PaisDTO pais;
+    //1
+    private final PaisDTO pais;
 
+    //1
     public EstadoDTO(Estado estado){
         this.id = estado.getId();
         this.nome = estado.getNome();

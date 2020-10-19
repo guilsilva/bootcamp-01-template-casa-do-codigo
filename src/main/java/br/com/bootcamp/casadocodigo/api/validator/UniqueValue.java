@@ -10,8 +10,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface UniqueValue {
     String message() default "{unique.value}";
-    Class<?>[] groups() default { };
-    Class<? extends Payload>[] payload() default { };
     String fieldName();
     Class<?> domainClass();
 }

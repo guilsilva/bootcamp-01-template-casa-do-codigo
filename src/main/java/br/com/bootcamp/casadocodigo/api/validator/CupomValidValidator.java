@@ -36,7 +36,6 @@ public class CupomValidValidator implements ConstraintValidator<CupomValid, Obje
             Assert.state(!list.isEmpty(),
                     "Não foi encontrado nenhum "+klass.getSimpleName()+" " +
                             "válido com o atributo "+domainAttribute+" = "+value);
-            return !list.isEmpty();
         }
         return Boolean.TRUE;
     }

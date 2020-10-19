@@ -1,20 +1,20 @@
 package br.com.bootcamp.casadocodigo.api.dto;
 
 import br.com.bootcamp.casadocodigo.domain.model.ItensCompra;
-import br.com.bootcamp.casadocodigo.domain.model.Livro;
 import lombok.Getter;
 
-import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
-
+//2
 public class ItensCompraDTO {
     @Getter
-    private DadosLivroCompraDTO livro;
+    //1
+    private final DadosLivroCompraDTO livro;
     @Getter
-    private Integer quantidade;
+    private final Integer quantidade;
     @Getter
-    private BigDecimal precoItem;
+    private final BigDecimal precoItem;
 
+    //1
     public ItensCompraDTO(ItensCompra itensCompra) {
         this.livro = new DadosLivroCompraDTO(itensCompra.getLivro());
         this.quantidade = itensCompra.getQuantidade();

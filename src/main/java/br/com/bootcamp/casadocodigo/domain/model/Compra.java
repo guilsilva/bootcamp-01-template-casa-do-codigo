@@ -1,7 +1,6 @@
 package br.com.bootcamp.casadocodigo.domain.model;
 
 import lombok.Getter;
-import org.springframework.context.annotation.PropertySource;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -20,13 +19,13 @@ public class Compra {
     @OneToOne
     private DadosCompra dadosCompra;
     @Getter
-    private BigDecimal total = new BigDecimal(0.0);
+    private BigDecimal total = new BigDecimal("0.0");
     @Getter
     @ManyToOne
     private Cupom cupom;
     @ElementCollection
     @Getter
-    private Set<ItensCompra> itens = new HashSet<>();
+    private final Set<ItensCompra> itens = new HashSet<>();
 
     @Deprecated
     public Compra(){}

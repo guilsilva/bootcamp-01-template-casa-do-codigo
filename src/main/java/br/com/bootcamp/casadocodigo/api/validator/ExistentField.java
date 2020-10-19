@@ -10,8 +10,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ExistentField {
     String message() default "{not.existent.value}";
-    Class<?>[] groups() default { };
-    Class<? extends Payload>[] payload() default { };
     String fieldName();
     Class<?> domainClass();
 }

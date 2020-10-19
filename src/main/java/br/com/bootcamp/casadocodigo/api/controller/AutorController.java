@@ -25,7 +25,7 @@ public class AutorController {
     @Transactional
     //1
     //1
-    public ResponseEntity<AutorDTO> cadastrarAutor(@RequestBody @Valid AutorForm form){
+    public ResponseEntity<AutorDTO> cadastroAutor(@RequestBody @Valid AutorForm form){
         //1
         Autor autor = form.get();
         entityManager.persist(autor);

@@ -1,26 +1,22 @@
 package br.com.bootcamp.casadocodigo.api.dto;
 
-import br.com.bootcamp.casadocodigo.api.validator.UniqueValue;
 import br.com.bootcamp.casadocodigo.domain.model.Cupom;
 import lombok.Getter;
 
-import javax.validation.constraints.Future;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
+//1
 public class CupomDTO {
     @Getter
-    private Long id;
+    private final Long id;
     @Getter
-    private String codigo;
+    private final String codigo;
     @Getter
-    private BigDecimal percentualDesconto;
+    private final BigDecimal percentualDesconto;
     @Getter
-    private LocalDate validade;
+    private final LocalDate validade;
 
+    //1
     public CupomDTO(Cupom cupom){
         this.id = cupom.getId();
         this.codigo = cupom.getCodigo();

@@ -1,10 +1,8 @@
 package br.com.bootcamp.casadocodigo.domain.model;
 
-import br.com.bootcamp.casadocodigo.api.form.CompraForm;
 import lombok.Getter;
 
 import javax.persistence.*;
-import java.util.Optional;
 
 @Entity
 public class DadosCompra {

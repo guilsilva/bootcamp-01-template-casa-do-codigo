@@ -4,24 +4,26 @@ import br.com.bootcamp.casadocodigo.domain.model.Livro;
 import lombok.Getter;
 
 import java.math.BigDecimal;
-
+//2
 public class DetalhesLivroDTO {
 
     @Getter
-    private String titulo;
+    private final String titulo;
     @Getter
-    private String resumo;
+    private final String resumo;
     @Getter
-    private String sumario;
+    private final String sumario;
     @Getter
-    private BigDecimal preco;
+    private final BigDecimal preco;
     @Getter
-    private Integer numeroPaginas;
+    private final Integer numeroPaginas;
     @Getter
-    private Long isnb;
+    private final Long isnb;
     @Getter
-    private DetalhesAutorDTO detalhesAutor;
+    //1
+    private final DetalhesAutorDTO detalhesAutor;
 
+    //1
     public DetalhesLivroDTO(Livro livro){
         this.titulo = livro.getTitulo();
         this.resumo = livro.getResumo();

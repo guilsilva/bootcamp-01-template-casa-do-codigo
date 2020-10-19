@@ -8,15 +8,15 @@ import java.time.LocalDate;
 public class AutorDTO {
 
     @Getter
-    private Long id;
+    private final Long id;
     @Getter
-    private String nome;
+    private final String nome;
     @Getter
-    private String email;
+    private final String email;
     @Getter
-    private String descricao;
+    private final String descricao;
     @Getter
-    private LocalDate dataRegistro;
+    private final LocalDate dataRegistro;
 
     //1
     public AutorDTO(Autor autor) {
