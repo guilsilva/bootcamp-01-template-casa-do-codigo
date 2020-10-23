@@ -20,8 +20,8 @@ public class CupomValidValidator implements ConstraintValidator<CupomValid, Obje
 
     @Override
     public void initialize(CupomValid params) {
-        domainAttribute = "codigo";
-        klass = Cupom.class;
+        domainAttribute = params.fieldName();
+        klass = params.domainClass();
     }
 
     @Override

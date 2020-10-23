@@ -2,6 +2,7 @@ package br.com.bootcamp.casadocodigo.api.form;
 
 import br.com.bootcamp.casadocodigo.api.validator.CupomValid;
 import br.com.bootcamp.casadocodigo.domain.model.Compra;
+import br.com.bootcamp.casadocodigo.domain.model.Cupom;
 import br.com.bootcamp.casadocodigo.domain.model.ItensCompra;
 import br.com.bootcamp.casadocodigo.domain.model.Livro;
 import br.com.bootcamp.casadocodigo.domain.repository.CupomRepository;
@@ -21,7 +22,7 @@ public class CompraForm {
     //1
     private final Set<ItensCompraForm> itensCompra = new HashSet<>();
     @Getter
-    @CupomValid
+    @CupomValid(domainClass = Cupom.class, fieldName = "codigo")
     private String cupomDesconto;
 
     //1
